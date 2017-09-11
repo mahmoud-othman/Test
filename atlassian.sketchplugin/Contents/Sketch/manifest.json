@@ -1,0 +1,59 @@
+{
+  "name": "Atlassian Sketch plugin",
+  "author": "Atlassian",
+  "email": "tim@atlassian.com",
+  "appcast": "https://s3-us-west-2.amazonaws.com/atlassian-sketch-plugin/appcast.xml",
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "JIRA",
+      "identifier": "jira",
+      "script": "jira.js",
+      "shortcut": "cmd alt j"
+    },
+    {
+      "name": "Feedback...",
+      "identifier": "feedback",
+      "script": "feedback.js"
+    },
+    {
+      "name": "StartUp",
+      "identifier": "startup",
+      "script": "startup.js",
+      "handlers": {
+        "actions": {
+          "Startup": "onRun"
+        }
+      }
+    },
+    {
+      "name": "Test Action",
+      "identifier": "test",
+      "script": "test.js",
+      "shortcut": "cmd alt b"
+    },
+    {
+      "name": "Add Export Button",
+      "identifier": "add-export-button",
+      "script": "add-export-button.js",
+      "handlers": {
+        "actions": {
+          "AddExportFormat": "onRun",
+          "SelectionChanged": "onRun"
+        }
+      }
+    }
+  ],
+  "menu": {
+    "title": "JIRA",
+    "items": [
+      "jira",
+      "feedback"
+    ]
+  },
+  "version": "0.0.9",
+  "description": "Share designs, assets, and feedback with your team",
+  "homepage": "https://bitbucket.org/atlassian/jira-sketch-plugin#readme",
+  "disableCocoaScriptPreprocessor": true
+}
